@@ -1,3 +1,8 @@
-# Example_config
+# Custom config
 
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+This config is meant to be used on top of NvChad (https://github.com/NvChad/nvcommunity).
+
+Install Neovim, NvChad and clone the config in the `lua/custom` directory (it is already in the NvChad .gitignore)
+
+
+

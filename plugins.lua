@@ -46,6 +46,8 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+
+  -- GitHub
   {
     "pwntester/octo.nvim",
     lazy = false,
@@ -53,6 +55,8 @@ local plugins = {
       require("octo").setup()
     end,
   },
+
+  -- GO
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
@@ -67,29 +71,13 @@ local plugins = {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
+  
+  -- Theme
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
   },
-  --{
-  --  "NvChad/nvdash.lua",
-  --  opts = overrides.nvdash
-  --}
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
 }
 
 return plugins
