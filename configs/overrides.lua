@@ -14,7 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "go",
     "gomod",
-    "gosum"
+    "gosum",
   },
   indent = {
     enable = true,
@@ -40,6 +40,9 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- go stuff
+    "gopls",
   },
 }
 
@@ -56,6 +59,28 @@ M.nvimtree = {
         git = true,
       },
     },
+  },
+}
+
+M.copilot = {
+  -- Possible configurable fields can be found on:
+  -- https://github.com/zbirenbaum/copilot.lua#setup-and-configuration
+  suggestion = {
+    enable = false,
+  },
+  panel = {
+    enable = false,
+  },
+}
+
+M.cmp = {
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "copilot" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   },
 }
 
