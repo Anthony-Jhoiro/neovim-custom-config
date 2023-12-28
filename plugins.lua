@@ -77,9 +77,36 @@ local plugins = {
   -- Debuggers
   {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "rcarriga/nvim-dap-ui",
+        config = function()
+          require("dapui").setup()
+        end,
+      },
+    },
     init = function()
       -- Add custom mappings for debugger
       require("core.utils").load_mappings "dap"
+
+      local dap, dapui = require "dap", require "dapui"
+
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    setup = function()
+      require("dapui").setup()
     end,
   },
 
